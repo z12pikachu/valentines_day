@@ -17,6 +17,7 @@
     <main class="container" role="main">
         <p id="declaration" aria-live="polite">Clique no botão para ler minha declaração de amor.</p>
         <button id="showDeclarationButton" aria-label="Mostrar Declaração de Amor">Mostrar Declaração</button>
+        <button id="showVideoButton" aria-label="Mostrar Vídeo">Mostrar Vídeo</button>
         <div id="photoContainer" class="hidden">
             <img id="photo" src="" alt="Foto romântica de um casal apaixonado">
         </div>
@@ -24,7 +25,15 @@
     <footer role="contentinfo">
         <p>&copy; 2024 Minha Declaração de Amor</p>
     </footer>
+    <div id="videoContainer" class="hidden">
+        <video id="videoPlayer" controls>
+            <source src="video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
+
+
 
