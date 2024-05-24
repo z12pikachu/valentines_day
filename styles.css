@@ -237,3 +237,17 @@ header h1 {
     max-height: 700px; /* Defina a altura máxima desejada */
     overflow: auto; /* Adicione uma barra de rolagem quando o conteúdo exceder a altura */
 }
+/* Seus estilos CSS existentes aqui */
+
+/* Estilos para a caixa de vídeo */
+#videoContainer {
+    margin-top: 20px;
+    display: none;
+}
+
+#videoPlayer {
+    width: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
