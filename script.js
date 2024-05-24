@@ -1,4 +1,5 @@
 document.getElementById('showDeclarationButton').addEventListener('click', showDeclaration);
+document.getElementById('showVideoButton').addEventListener('click', showVideo);
 
 function showDeclaration() {
     const declarationText = "Oi minha Princesa, queria te dizer que voce e a mulher da minha vida, nao tenho muitas palavras para expressar o que sinto, todavia saiba que o meu sentimento se resume em apenas uma: AMOR, o sentimento indescritivel de ficar bem apenas de te ver sorrir, de levantar todo dia pensando em nos e encontrar forcas para enfrentar tudo e todos pelo nosso futuro, saiba que independente de tudo que aconteca, voce sempre me tera, seu ze, seu menino desatento, seu homem, seu parceiro. Eu ainda quero conquistar muitas coisas ao seu lado, e peco isso a Deus todos os dias, mas vejo que tenho muito mais a agradecer a ele, pois o mais importante eu ja tenho... VOCE, essa mulher carinhosa e ao mesmo tempo brava, essa mulher inteligente e esperta, essa mulher inspiradora, guerreira. Obrigado por compartilhar seu bem mais precioso comigo, sua VIDA, e um priviegio estar seguindo essa jornada ao seu lado, EU TE AMO EVELLYN.";
@@ -73,4 +74,12 @@ function createFallingPhoto() {
     setTimeout(() => {
         photo.remove();
     }, 5000);
+}
+
+function showVideo() {
+    const videoContainer = document.getElementById('videoContainer');
+    const videoPlayer = document.getElementById('videoPlayer');
+
+    videoContainer.style.display = 'block'; // Exibindo o contêiner de vídeo
+    videoPlayer.play();
 }
