@@ -37,6 +37,7 @@ h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-family: var(--font-family);
+    animation: pulse 2s infinite;
 }
 
 .container {
@@ -47,6 +48,8 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
+    max-height: 700px;
+    overflow: auto;
     z-index: 1;
     position: relative;
 }
@@ -121,8 +124,7 @@ button:hover {
 }
 
 .heart {
-    background-color: red;
-    clip-path: polygon(50% 0%, 100% 33%, 82% 100%, 50% 70%, 18% 100%, 0 33%);
+    background: url('heart.png') no-repeat center center / contain;
 }
 
 .falling-photo {
@@ -140,45 +142,7 @@ button:hover {
         opacity: 0;
     }
 }
-/* Adicione isso ao seu arquivo styles.css */
 
-/* Animações */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100vh);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Corações flutuantes */
-.heart {
-    position: absolute;
-    bottom: 0;
-    width: 20px;
-    height: 20px;
-    background: url('heart.jpg') no-repeat center center / contain;
-    animation: float linear;
-}
-
-/* Fotos flutuantes */
-.falling-photo {
-    position: absolute;
-    bottom: 0;
-    background-size: cover;
-    animation: float linear;
-}
-/* Animação de pulsação */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -191,54 +155,6 @@ button:hover {
     }
 }
 
-/* Animações */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100vh);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Corações flutuantes */
-.heart {
-    position: absolute;
-    bottom: 0;
-    width: 20px;
-    height: 20px;
-    background: url('heart.png') no-repeat center center / contain;
-    animation: float linear;
-}
-
-/* Fotos flutuantes */
-.falling-photo {
-    position: absolute;
-    bottom: 0;
-    background-size: cover;
-    animation: float linear;
-}
-
-/* Aplicação da animação de pulsação ao título */
-header h1 {
-    animation: pulse 2s infinite;
-}
-.container {
-    /* ... outros estilos ... */
-    max-height: 700px; /* Defina a altura máxima desejada */
-    overflow: auto; /* Adicione uma barra de rolagem quando o conteúdo exceder a altura */
-}
-/* Seus estilos CSS existentes aqui */
-
 /* Estilos para a caixa de vídeo */
 #videoContainer {
     margin-top: 20px;
@@ -250,4 +166,14 @@ header h1 {
     border: 2px solid var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.column {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .column {
+        width: 50%;
+    }
 }

@@ -83,3 +83,13 @@ function showVideo() {
     videoContainer.style.display = 'block'; // Exibindo o contêiner de vídeo
     videoPlayer.play();
 }
+const canvas = document.getElementById('heartCanvas');
+const ctx = canvas.getContext('2d');
+
+function curve() {
+    for (let i = 0; i < 200; i++) {
+        ctx.rotate(Math.PI / 200);
+        ctx.lineTo(1, 1);
+    }
+}
+
