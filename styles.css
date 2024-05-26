@@ -2,13 +2,13 @@
     --primary-color: #ff69b4;
     --secondary-color: #ff1493;
     --background-color: #f8f0f0;
-    --font-family: 'Dancing Script', cursive;
+    --font-family: 'Script MT Bold', sans-serif;
 }
 
 body {
     margin: 0;
     overflow: hidden; /* Evita barra de rolagem */
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--font-family);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +36,6 @@ h1 {
     color: var(--secondary-color);
     font-size: 2.5em;
     margin-bottom: 20px;
-    font-family: var(--font-family);
     animation: pulse 2s infinite;
 }
 
@@ -71,8 +70,14 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+button:hover, button:focus {
     background-color: var(--secondary-color);
+    outline: none;
+}
+
+button:focus {
+    outline: 2px dashed var(--secondary-color);
+    outline-offset: 2px;
 }
 
 .hidden {

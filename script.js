@@ -6,8 +6,7 @@ function showDeclaration() {
     const declarationElement = document.getElementById('declaration');
     const photoContainer = document.getElementById('photoContainer');
     const photo = document.getElementById('photo');
-    
-    // Adicionando animação
+
     declarationElement.style.opacity = 0;
     setTimeout(() => {
         declarationElement.innerText = declarationText;
@@ -15,11 +14,9 @@ function showDeclaration() {
         declarationElement.style.opacity = 1;
     }, 100);
 
-    // Exibir foto
-    photo.src = 'ft1.jpg'; // Substitua pelo link da sua foto
+    photo.src = 'ft1.jpg';
     photoContainer.classList.remove('hidden');
 
-    // Adicionar corações e fotos flutuantes
     createHeartsAndPhotos();
 }
 
@@ -42,7 +39,7 @@ function createHeart() {
         { top: '-20px', opacity: 1 },
         { top: '100vh', opacity: 0 }
     ], {
-        duration: Math.random() * 10000 + 15000, // Duração aleatória entre 3 e 5 segundos
+        duration: Math.random() * 10000 + 15000,
         easing: 'ease-out',
         iterations: 1,
         fill: 'forwards'
@@ -53,12 +50,10 @@ function createHeart() {
     };
 }
 
-
 function createFallingPhoto() {
     const photoURLs = [
-        'ft1.jpg', // Substitua pelos links das suas fotos
+        'ft1.jpg',
         'heart.jpg',
-        // Adicione mais links de fotos conforme necessário
     ];
     const photoURL = photoURLs[Math.floor(Math.random() * photoURLs.length)];
 
@@ -80,16 +75,25 @@ function showVideo() {
     const videoContainer = document.getElementById('videoContainer');
     const videoPlayer = document.getElementById('videoPlayer');
 
-    videoContainer.style.display = 'block'; // Exibindo o contêiner de vídeo
+    videoContainer.style.display = 'block';
     videoPlayer.play();
 }
-const canvas = document.getElementById('heartCanvas');
-const ctx = canvas.getContext('2d');
 
-function curve() {
-    for (let i = 0; i < 200; i++) {
-        ctx.rotate(Math.PI / 200);
-        ctx.lineTo(1, 1);
-    }
+// Remova elementos DOM após a animação para liberar memória
+function removeElementAfterAnimation(element, duration) {
+    setTimeout(() => {
+        element.remove();
+    }, duration);
 }
 
+const canvas = document.getElementById('heartCanvas');
+const ctx = canvas ? canvas.getContext('2d') : null;
+
+function curve() {
+    if (ctx) {
+        for (let i = 0; i < 200; i++) {
+            ctx.rotate(Math.PI / 200);
+            ctx.lineTo(1, 1);
+        }
+    }
+}
