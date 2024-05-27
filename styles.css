@@ -2,12 +2,13 @@
     --primary-color: #ff69b4;
     --secondary-color: #ff1493;
     --background-color: #f8f0f0;
-    --font-family: 'Script MT Bold', sans-serif;
+    --font-family: 'I Love Glitter', sans-serif;
 }
 
 body {
     margin: 0;
-    overflow: hidden; /* Evita barra de rolagem */
+    overflow-x: hidden;
+    overflow-y: scroll;
     font-family: var(--font-family);
     display: flex;
     flex-direction: column;
@@ -61,7 +62,7 @@ p {
 
 button {
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
@@ -167,9 +168,11 @@ button:focus {
 }
 
 #videoPlayer {
-    width: 100%;
-    border: 2px solid var(--primary-color);
-    border-radius: 10px;
+	position: static;
+    text-align: center;
+    width: 50%;
+    border: 0px solid var(--primary-color);
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
