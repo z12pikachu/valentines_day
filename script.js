@@ -1,13 +1,21 @@
+// Adiciona event listeners aos botões
 document.getElementById('showDeclarationButton').addEventListener('click', showDeclaration);
 document.getElementById('showVideoButton').addEventListener('click', showVideo);
+
+// Função para exibir a declaração de amor
 function showDeclaration() {
     const declarationText = "Oi minha Princesa, queria te dizer que você é a mulher da minha vida, não tenho muitas palavras para expressar o que sinto, todavia saiba que o meu sentimento se resume em apenas uma: AMOR, o sentimento indescritivel de ficar bem apenas de te ver sorrir, de levantar todo dia pensando em nós, em ti... e encontrar forças para enfrentar tudo e todos pelo nosso futuro, saiba que independente de tudo que aconteça, você sempre me terá, seu zé, seu menino desatento, seu homem, seu parceiro. Eu ainda quero conquistar muitas coisas ao seu lado, e peço isso a Deus todos os dias, mas vejo que tenho muito mais a agradecer a ele, pois o mais importante eu ja tenho... VOCÊ, essa mulher carinhosa e ao mesmo tempo brava, essa mulher inteligente e esperta, essa mulher inspiradora, guerreira. Obrigado por compartilhar seu bem mais precioso comigo, sua VIDA, é um priviegio estar seguindo essa jornada ao seu lado, EU TE AMO EVELLYN.";
+    
     const declarationElement = document.getElementById('declaration');
     const photoContainer = document.getElementById('photoContainer');
     const photo = document.getElementById('photo');
     const audio = document.querySelector('audio');
+    
+    // Define a foto e remove a classe 'hidden' do container da foto
     photo.src = 'ft2.jpg';
     photoContainer.classList.remove('hidden');
+    
+    // Faz a declaração desaparecer gradualmente antes de exibir o novo texto
     declarationElement.style.opacity = 0;
     setTimeout(() => {
         declarationElement.innerText = declarationText;
@@ -15,15 +23,16 @@ function showDeclaration() {
         declarationElement.style.opacity = 1;
     }, 100);
 
-   
-
+    // Reproduz o áudio, se disponível
     if (audio) {
         audio.play();
     }
 
+    // Cria corações e fotos caindo
     createHeartsAndPhotos();
 }
 
+// Função para criar corações e fotos caindo
 function createHeartsAndPhotos() {
     for (let i = 0; i < 20; i++) {
         setTimeout(() => {
@@ -33,6 +42,7 @@ function createHeartsAndPhotos() {
     }
 }
 
+// Função para criar um coração caindo
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
@@ -54,11 +64,12 @@ function createHeart() {
     };
 }
 
+// Função para criar uma foto caindo
 function createFallingPhoto() {
     const photoURLs = [
         'ft1.jpg',
         'heart.jpg',
-	    'ft2.jpg'
+        'ft2.jpg'
     ];
     const photoURL = photoURLs[Math.floor(Math.random() * photoURLs.length)];
 
@@ -76,24 +87,18 @@ function createFallingPhoto() {
     }, 5000);
 }
 
+// Função para exibir o vídeo
 function showVideo() {
-	
     const videoContainer = document.getElementById('videoContainer');
     const videoPlayer = document.getElementById('videoPlayer');
+    const audio = document.querySelector('audio');
+    
     videoContainer.style.display = 'block';
-    videoPlayer.play();
-	var form = document.getElementById('form');
-	form.reset();
-}
-
-const canvas = document.getElementById('heartCanvas');
-const ctx = canvas ? canvas.getContext('2d') : null;
-
-function curve() {
-    if (ctx) {
-        for (let i = 0; i < 200; i++) {
-            ctx.rotate(Math.PI / 200);
-            ctx.lineTo(1, 1);
-        }
+    
+    // Pausa o áudio antes de reproduzir o vídeo
+    if (audio) {
+        audio.pause();
     }
+    
+    videoPlayer.play();
 }
