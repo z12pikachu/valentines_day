@@ -7,7 +7,8 @@ function showDeclaration() {
     const photoContainer = document.getElementById('photoContainer');
     const photo = document.getElementById('photo');
     const audio = document.querySelector('audio');
-
+    photo.src = 'ft2.jpg';
+    photoContainer.classList.remove('hidden');
     declarationElement.style.opacity = 0;
     setTimeout(() => {
         declarationElement.innerText = declarationText;
@@ -15,8 +16,7 @@ function showDeclaration() {
         declarationElement.style.opacity = 1;
     }, 100);
 
-    photo.src = 'ft1.jpg';
-    photoContainer.classList.remove('hidden');
+   
 
     if (audio) {
         audio.play();
@@ -77,11 +77,13 @@ function createFallingPhoto() {
 }
 
 function showVideo() {
+	
     const videoContainer = document.getElementById('videoContainer');
     const videoPlayer = document.getElementById('videoPlayer');
-
     videoContainer.style.display = 'block';
     videoPlayer.play();
+	var form = document.getElementById('form');
+	form.reset();
 }
 
 const canvas = document.getElementById('heartCanvas');
