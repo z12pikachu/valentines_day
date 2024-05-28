@@ -59,6 +59,7 @@ function createFallingPhoto() {
     const photoURLs = [
         'ft1.jpg',
         'heart.jpg',
+	    'ft2.jpg'
     ];
     const photoURL = photoURLs[Math.floor(Math.random() * photoURLs.length)];
 
