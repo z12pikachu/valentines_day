@@ -18,7 +18,7 @@ body {
     background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-}
+	}
 
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
@@ -163,12 +163,19 @@ button:focus {
 
 /* Estilos para a caixa de vídeo */
 #videoContainer {
-    margin-top: 20px;
-    display: none;
+   .video{
+     position: relative;
+	 text-align: center;
+     z-index: -1;
+     opacity: 0.78;
+     widows: 100%;
+     width: 100 !import	ant;
+     height: 100 !important;
+     margin:0 auto;
 }
 
 #videoPlayer {
-	position: static;
+	position: relative;
     text-align: center;
     width: 50%;
     border: 0px solid var(--primary-color);

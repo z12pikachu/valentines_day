@@ -6,6 +6,7 @@ function showDeclaration() {
     const declarationElement = document.getElementById('declaration');
     const photoContainer = document.getElementById('photoContainer');
     const photo = document.getElementById('photo');
+    const audio = document.querySelector('audio');
 
     declarationElement.style.opacity = 0;
     setTimeout(() => {
@@ -16,6 +17,10 @@ function showDeclaration() {
 
     photo.src = 'ft1.jpg';
     photoContainer.classList.remove('hidden');
+
+    if (audio) {
+        audio.play();
+    }
 
     createHeartsAndPhotos();
 }
@@ -77,13 +82,6 @@ function showVideo() {
 
     videoContainer.style.display = 'block';
     videoPlayer.play();
-}
-
-// Remova elementos DOM após a animação para liberar memória
-function removeElementAfterAnimation(element, duration) {
-    setTimeout(() => {
-        element.remove();
-    }, duration);
 }
 
 const canvas = document.getElementById('heartCanvas');
